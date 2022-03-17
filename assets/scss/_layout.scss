@@ -1,0 +1,60 @@
+.content {
+	position: absolute;
+	overflow: hidden;
+
+	&__left {
+			float: left;
+			width: $width-left-col;
+			height: 100%;
+			padding: 3rem 4rem;
+
+			@media screen {
+					&::after {
+							content: '2022 © by Jeff Davis   |   github.com/JefeDavis';
+							height: 4rem;
+							width: 100%;
+							position: absolute;
+							bottom: 0.5rem;
+							color: darken($color-light, 10%);
+					}
+			}
+	}
+
+	&__right {
+			position: absolute;
+			float: right;
+			width: $width-right-col;
+			background-color: $color-right-col-background;
+			color: $color-right-col-body-text;
+			height: 100%;
+			padding: 2rem 3rem;
+			right: 1rem;
+			border-left: 1px solid $color-primary;
+
+			@include shadow(0.5);
+	}
+}
+
+.pdf-button {
+	opacity: 75%;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	
+	& > i {
+		background-color: $color-right-col-icon-background;
+		color: $color-right-col-icon-primary;
+		font-size: 3rem;
+		text-align: center;
+		border-radius: 50%;
+		padding-top: 0.5rem;
+		width: 4rem;
+		height: 4rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	@media print {
+		display: none !important;
+	}
+}

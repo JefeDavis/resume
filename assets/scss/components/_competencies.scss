@@ -1,0 +1,8 @@
+.competencies {
+	& li{
+		display: inline-list;
+		list-style-type: disc;
+		font-weight: 400;
+		transition: all 0.2s ease-in-out;
+	}
+}

@@ -1,0 +1,26 @@
+{{ $data := or (index .Site.Data .Site.Language.Lang) .Site.Data }}
+{{ .Scratch.Set "data" $data }}
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+<body>
+    <div class="content">
+        <div class="content__left">
+            <h1 class="mainHeading">{{ $data.profile.basicInfo.firstName }} <span>{{ $data.profile.basicInfo.lastName }}</span></h1>
+            <h4 class="content__title"><span>This Resume is maintained using my Resume Operator powered by K8s</span></h4>
+            <h5>Check it out at: <a href="https://github.com/JefeDavis/Resume-Operator">https://github.com/JefeDavis/Resume-Operator</a></h5>
+            {{ partial "_overview.html" $data.profile }}
+            {{ partial "_experience.html" $data }}
+            {{ partial "_projects.html" $data.profile }}
+        </div>
+        <div class="content__right">
+            {{ partial "_avatar.html" $data.profile }}
+            {{ partial "_contacts.html" $data.profile }}
+            {{ partial "_competencies.html" $data.profile }}
+            {{ partial "_skills.html" $data.profile }}
+            {{ partial "_certs.html" $data }}
+        </div>
+    </div>
+    <a href="/convert" class="pdf-button"><i class="fa fa-file-pdf"></div>
+</body>
+</html>

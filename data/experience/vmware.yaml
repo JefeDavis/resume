@@ -1,0 +1,14 @@
+---
+employer: Lorem Ipsum
+location: Remote
+startDate: 2021-03-01
+endDate: Present
+positions:
+  - title: Lorem ipsum dolor sit
+    highlights:
+      - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      - Mauris fermentum nulla nec erat eleifend dapibus.
+      - Aliquam nec elit in risus volutpat facilisis ac sed leo.
+      - Donec nec libero ac ex sagittis elementum eget et ante.
+      - Curabitur eu justo nec sapien hendrerit fermentum eu nec erat.
+      - Ut viverra massa at pellentesque suscipit.

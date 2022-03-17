@@ -1,0 +1,19 @@
+{{ if .certs }}
+<div class="sideSection certification">
+  <div class="sideSection__heading">
+    <h2 class="sideSection__title">{{ i18n "certifications" }}</h2>
+  </div>
+  <div class="sideSection__content">
+    <ul>
+      {{- range sort .certs "earnedDate" "desc" }}
+        {{- if ne .title nil }}
+          <li>
+            <a href="{{ .validationURL  | safeHTML }}", class="certification__title", target="_blank">{{ .title | safeHTML }}({{ .alias }})</a>
+            <span class="certification__date">{{ time.Format "January 2006" .earnedDate | safeHTML }}</span>
+          </li>
+        {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,31 @@
+basicInfo:
+  firstName: John
+  lastName: Doe
+  photo: img/avatar.jpg
+  contacts:
+    - icon: fa fa-linkedin
+      info: https://linkedin.com/in/JohnDoe
+    - icon: fa fa-github
+      info: https://github.com/JohnDoe
+    - icon: fa fa-map-marker
+      info: Somewhere
+overview:
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem nec tellus facilisis aliquam. Curabitur lobortis, tortor eget laoreet interdum, nisi magna maximus risus, sed placerat urna sapien non sapien. Aliquam fermentum neque vitae nibh vulputate auctor. Vivamus ut ante posuere, pretium enim sit amet, porttitor elit. Pellentesque at purus risus. Sed consectetur justo vel sem consectetur, sit amet porttitor diam finibus. Ut dictum, justo eu tempus blandit, sem leo pharetra enim, in vulputate mauris leo nec enim. Sed nec pretium nisl, vitae ullamcorper tortor. Maecenas elementum nisi metus, eget porta urna suscipit id. Nullam mauris eros, scelerisque sed molestie et, eleifend sed sem. Maecenas vitae metus nec risus lacinia semper et at mauris. Praesent euismod nunc nec tellus consequat, maximus pellentesque nisi gravida. Ut ac ante vitae dolor blandit euismod.
+coreCompetencies:
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - Proin sed nunc eu orci mattis pulvinar.
+  - Vivamus fermentum odio non mollis sagittis.
+projects:
+  - https://github.com/nukleros/operator-builder
+  - https://github.com/JefeDavis/resume
+  - https://github.com/JefeDavis/resume-operator
+skills:
+  - family: Programming
+    items:
+      - Golang
+  - family: Developer Tools
+    items:
+      - Git
+  - family: Container Orchestration
+    items:
+      - Kubernetes

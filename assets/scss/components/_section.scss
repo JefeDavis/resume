@@ -1,0 +1,20 @@
+.section {
+	display: block;
+	margin-bottom: 2rem;
+
+	&__heading {
+			width: 100%;
+			overflow: hidden;
+	}
+
+	&__title {
+			position: relative;
+			color: $color-primary;
+			border-bottom: 1px solid;
+			border-color: $color-primary;
+
+			&:hover::after {
+					border-color: $color-secondary;
+			}
+	}
+}

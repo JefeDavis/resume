@@ -1,0 +1,10 @@
+{{ if .overview }}
+<div id="overview" class="section">
+    <div class="section__heading">
+        <h2 class="section__title">{{ i18n "overview" }}</h2>
+    </div>
+    <div class="section__content">
+        <p>{{ .overview | safeHTML | emojify }}</p>
+    </div>
+</div>
+{{ end }}

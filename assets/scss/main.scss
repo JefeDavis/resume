@@ -1,0 +1,36 @@
+$color-light: {{ .Site.Params.colorLight | default "#ffffff" }} !default;
+$color-dark: {{ .Site.Params.colorDark | default "#666x"}} !default;
+$color-page-background: {{ .Site.Params.colorPageBackground | default "#ddd" }} !default;
+
+$color-primary: {{ .Site.Params.colorPrimary | default "#e3bfb8"}} !default;
+$color-secondary: {{ .Site.Params.colorSecondary | default "#aaa"}} !default;
+
+$color-icon-primary: {{ .Site.Params.colorIconPrimary | default "#fff"}} !default;
+$color-icon-background: {{ .Site.Params.colorIconBackground | default "#e3bfb8"}} !default;
+
+$color-right-col-background: {{ .Site.Params.colorRightColumnBackground | default "#f5f5f5" }} !default;
+$color-right-col-heading-text: {{ .Site.Params.colorRightColumnHeadingText | default "#666" }} !default;
+$color-right-col-body-text: {{ .Site.Params.colorRightColumnBodyText | default "#666" }} !default;
+$color-right-col-icon-primary: {{ .Site.Params.colorRightColumnIconPrimary | default "#fff" }} !default;
+$color-right-col-icon-background: {{ .Site.Params.colorRightColumnIconBackground | default "#e3bfb8" }} !default;
+
+$pages: {{ .Site.Params.pages | default 1}} !default;
+
+@import "abstract";
+@import "functions";
+@import "mixins";
+@import "layout";
+@import "typography";
+@import "base";
+
+@import "components/section";
+@import "components/side_section";
+@import "components/experience";
+@import "components/repos";
+@import "components/cards";
+@import "components/contact";
+@import "components/competencies";
+@import "components/avatar";
+@import "components/skills";
+@import "components/certifications";
+@import "components/404";

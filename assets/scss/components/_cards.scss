@@ -1,0 +1,92 @@
+.cards {
+	&::before,
+	&::after{
+		box-sizing: border-box;
+	}
+
+	&__container{
+		width: 100%;
+		padding-top: 1rem;
+		margin-right: auto;
+	}
+
+	&__row{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		padding-bottom: 1rem;
+	}
+
+	&__col{
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+		position: relative;
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+	}
+
+	&__link{
+		text-decoration: none;
+	}
+
+	&__card{
+		margin-top: 0.5rem !important;
+		margin-bottom: 0.5rem;
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		word-wrap: break-word;
+		background-color: $color-light;
+		background-clip: border-box;
+		border: 1px solid $color-dark;
+		border-radius: 0.50rem;
+		transition: all 0.3s ease-out;
+
+		@include shadow(0.4);
+
+		&:hover {
+			transform: translate3d(-0.5rem,-0.5rem,0);
+		}
+	}
+
+	&__header{
+		background-color: transparent;
+		height: fit-content;
+		padding: 0.7rem;
+		padding-bottom: 0rem;
+		border-bottom: 0.0625rem solid $color-dark;
+		object-fit: cover;
+		overflow: hidden;
+		display: flex !important;
+	}
+	
+	&__title{
+		margin-bottom: 0.75rem;
+		font-size: 1.15rem;
+		color: $color-primary;
+		font-weight: 1000;
+		line-height: 1.5;
+		margin-top: 0;
+	}
+
+	&__body{
+		padding-top: 0.2rem;
+		padding-left: 0.7rem;
+		padding: 1.25rem;
+		text-align: left;
+		flex: 1 1 auto;
+	}
+
+	&__text{
+		color: $color-dark;
+		margin-top: 0;
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

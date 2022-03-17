@@ -1,0 +1,33 @@
+{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
+{{ $data := .Scratch.Get "data" }}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ .Site.Title }}</title>
+
+
+	<link rel="canonical" href="{{ .Permalink }}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<script src="https://kit.fontawesome.com/5337cd283d.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" media="screen,print" />
+
+	{{- if .Site.Params.enableMetaTags }}
+    <meta property="og:title" content="{{ .Site.Title }}" />
+		<meta property="og:url" content="{{ .Permalink }}" />
+		<meta property="og:type" content="website" />
+		{{- with $data.BasicInfo.Photo }}
+			<meta property="og:image" content="{{ . | absURL }}" />
+		{{- end }}
+		{{- with $data.overview | htmlUnescape | emojify | truncate 200 }}
+			<meta property="og:description" content="{{ . }}" />
+			<meta name="description" content="{{ . }}" />
+		{{- end }}
+	{{- end }}
+
+	{{- if .Site.GoogleAnalytics }}
+		{{ template "_internal/google_analytics.html" . }}
+		{{ template "_internal/google_analytics_async.html" . }}
+	{{- end }}
+</head>

@@ -1,0 +1,52 @@
+{{- if .experience }}
+  <div id="experience" class="section">
+    <div class="section__heading">
+      <h2 class="section__title">
+        {{ i18n "experience" }}
+      </h2>
+    </div>
+    <div class="section__content">
+      <div class="experience">
+        {{- range sort .experience "startDate" "desc" }}
+          {{- if ne .employer nil }}
+            {{- $experience := . }}
+            <div class="experience__item">
+              <div class="experience__header">
+                <h3 class="experience__employer">
+                  {{ .employer | safeHTML }}
+                </h3>
+                <h3 class="experience__place">
+                  {{ .location | safeHTML }}
+                </h3>
+              </div>
+              {{- range .positions }}
+                <div class="experience__job">
+                  <div class="experience__subheader">
+                    <h3 class="experience__position">
+                      {{ .title | safeHTML}}
+                    </h3>
+                    <h3 class="experience__date">
+                      {{- $startDate := or .startDate $experience.startDate }}
+                      {{- $endDate := or .endDate $experience.endDate }}
+                      {{ time.Format "January 2006" $startDate  | safeHTML }} - 
+                      {{ if ne $endDate "Present" -}} 
+                        {{- time.Format "January 2006" $endDate | safeHTML }}
+                      {{- else }}
+                        {{ $endDate }}
+                      {{- end }}
+                    </h3>
+                  </div>
+                  <ul>
+                    {{- range .highlights }}
+                      <li class="experience__bullet">{{ . | safeHTML }}</li>
+                    {{- end }}
+                  </ul>
+                </div>
+              {{- end }}
+            </div>
+          {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </div>
+{{- end }}

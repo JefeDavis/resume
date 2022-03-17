@@ -1,0 +1,27 @@
+.certification {
+	display: block;
+	margin-bottom: 3rem;
+	@include avoid-break;
+	font-size: 90%;
+
+	& li {
+		list-style-type: disc;
+	}
+
+	&__title {
+		color: $color-primary;
+	}
+
+	&__date {
+		&::before{
+			content: "(";
+		}
+
+		&::after{
+			content: ")";
+		}
+
+		color: $color-dark;
+		font-style: italic;
+	}
+}
