@@ -1,0 +1,48 @@
+---
+apiVersion: resume.jefedavis.go/v1alpha1
+kind: JobExperience
+metadata:
+  name: vmware-staff-field-engineer
+  labels:
+    resume.jefedavis.go/candidate: jeffdavis
+    resume.jefedavis.go/company: vmwareTanzuLabs
+spec:
+  company: VMware Tanzu Labs
+  location: Remote
+  startDate: 2021-March
+  endDate: Present
+  title: Staff Field Engineer
+  highlights:
+    - Developed open-source tool to convert Kubernetes manifests into fully functional Kubernetes Operators to preform create, update, and delete lifecycles of an application
+    -	Created Golang library to convert Kubernetes Yaml manifests into Golang structs
+    -	Engineered open-source tool to allow overlaying Yaml manifests via Json Path specification
+    -	Designed Golang “marker” lexer using state machine concepts to understand marker comments in Yaml manifests and Golang source code
+    -	Consulted on reference architecture for Tanzu Kubernetes on vSphere
+  projects:
+    - name: Yaml Overlay Tool (yot)
+      projectURL: https://github.com/vmware-tanzu-labs/yaml-overlay-tool
+      description: -|
+        YAML Overlay Tool, or Yot for short, often pronounced /yaucht/, 
+        is a tool to assist with patching YAML files. Yot uses JSONPath 
+        to query YAML documents within YAML files, and to perform a change. 
+        YAML Overlay Tool operates on YAML nodes. It is able to preserve 
+        and inject head, foot, and line comments into the new output
+        versions of the files that you manipulate.
+    - name: Operator Builder
+      projectURL: https://github.com/vmware-tanzu-labs/operator-builder
+      description: -|
+        Accelerate the development of Kubernetes Operators.
+        Operator Builder extends Kubebuilder to facilitate development
+        and maintenance of Kubernetes operators. It is especially helpful
+        if you need to take large numbers of resources defined with static
+        or templated yaml and migrate to managing those resources with
+        a custom Kubernetes operator.
+    - name: Object Code Generator for K8s
+      projectURL: https://github.com/vmware-tanzu-labs/object-code-generator-for-k8s
+      description: -|
+        Generate source code for unstructured Kubernetes Go types from yaml manifests.
+        This project is intended for use when scaffolding source code for Go projects
+        that manage Kubernetes resources.
+    - name: yaml-jsonpath
+      projectURL: https://github.com/vmware-labs/yaml-jsonpath
+      description: JSONPath implementation for the YAML node API.
