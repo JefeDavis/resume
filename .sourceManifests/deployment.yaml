@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hugo
+  labels:
+    resume.jefedavis.go/candidate: jeffdavis
+spec:
+  selector:
+    matchLabels:
+      resume.jefedavis.go/candidate: jeffdavis
+  template:
+    metadata:
+      labels:
+        resume.jefedavis.go/candidate: jeffdavis
+    spec:
+      containers:
+        - name: hugo
+          image: jefedavis/resume:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: 500m
+              memory: 128Mi
+          volumeMounts:
+            - mountPath: /site/data
+              name: data-mount
+            - mountPath: /site/config.toml
+              subPath: config.toml
+              name: config
+      volumes:
+        - name: data-mount
+          configMap:
+            name: resume-data
+        - name: config
+          configMap:
+            name: resume-config
+
+            
