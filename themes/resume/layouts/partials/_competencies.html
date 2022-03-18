@@ -1,0 +1,16 @@
+{{ if .coreCompetencies }}
+<div class="sideSection competencies">
+    <div class="sideSection__heading">
+        <h2 class="sideSection__title">{{ i18n "competencies" }}</h2>
+    </div>
+    <div class="sideSection__content">
+        <ul class="competencies">
+            {{ range .coreCompetencies }}
+            <li>
+               {{ . | safeHTML }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}
