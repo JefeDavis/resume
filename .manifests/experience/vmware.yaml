@@ -2,22 +2,22 @@
 apiVersion: resume.jefedavis.go/v1alpha1
 kind: JobExperience
 metadata:
-  name: vmware-staff-field-engineer
+  name: vmware-jobs
   labels:
     resume.jefedavis.go/candidate: jeffdavis
-    resume.jefedavis.go/company: vmwareTanzuLabs
+    resume.jefedavis.go/employer: vmwareTanzuLabs
 spec:
-  company: VMware Tanzu Labs
-  location: Remote
-  startDate: 2021-March
-  endDate: Present
-  title: Staff Field Engineer
-  highlights:
-    - Developed open-source tool to convert Kubernetes manifests into fully functional Kubernetes Operators to preform create, update, and delete lifecycles of an application
-    -	Created Golang library to convert Kubernetes Yaml manifests into Golang structs
-    -	Engineered open-source tool to allow overlaying Yaml manifests via Json Path specification
-    -	Designed Golang “marker” lexer using state machine concepts to understand marker comments in Yaml manifests and Golang source code
-    -	Consulted on reference architecture for Tanzu Kubernetes on vSphere
+  employer: VMware Tanzu Labs
+  postions:
+    - location: Remote
+      dates: March 2021 - Present
+      title: Staff Field Engineer
+      highlights:
+        - Developed open-source tool to convert Kubernetes manifests into fully functional Kubernetes Operators to preform create, update, and delete lifecycles of an application
+        -	Created Golang library to convert Kubernetes Yaml manifests into Golang structs
+        -	Engineered open-source tool to allow overlaying Yaml manifests via Json Path specification
+        -	Designed Golang “marker” lexer using state machine concepts to understand marker comments in Yaml manifests and Golang source code
+        -	Consulted on reference architecture for Tanzu Kubernetes on vSphere
   projects:
     - name: Yaml Overlay Tool (yot)
       projectURL: https://github.com/vmware-tanzu-labs/yaml-overlay-tool
