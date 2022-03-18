@@ -1,0 +1,73 @@
+basicInfo:
+  firstName: Jeff
+  lastName: Davis
+  photo: img/avatar.jpg
+  contacts:
+    - icon: fa-solid fa-phone
+      info: +1 (605) 269-8437
+    - icon: fa-solid fa-envelope
+      info: mr.JefeDavis@gmail.com
+    - icon: fa-brands fa-linkedin
+      info: https://linkedin.com/in/JefeDavis
+    - icon: fa-brands fa-github
+      info: https://github.com/JefeDavis
+    - icon: fa-solid fa-map-marker-alt
+      info: South Carolina
+overview:
+  Passionate Kubernetes Engineer with automation, design, and architecture
+  experience along with strong programming and troubleshooting skills in enterprise
+  environments. Self-motivated with not only a desire to learn, but to lead and teach
+  others as well. Seeking a professionally challenging environment to engage
+  technical and automation skills. 
+coreCompetencies:
+  - Virtual and Container technology design, implementation, and troubleshooting
+  - Deep understanding of underlying data center concepts and theories
+  - Expert on Automating problems to remove roadblocks and ease operational overhead
+  - Productivity in high pressure situations
+  - Analytical thinking
+  - Written and oral communication
+  - Confidence briefing executive staff
+  - Datacenter design & architecture
+  - Experienced traveler
+skills:
+  - family: Programming
+    items:
+      - Golang
+      - PowerShell
+      - Python
+      - Docker
+      - Helm
+      - GraphQL
+      - Yaml
+      - Bash
+      - HTML (including Jinja)
+      - Javascript
+      - CSS
+      - SCSS
+  - family: Developer Tools
+    items:
+      - Git
+      - Gitlab
+      - Github
+      - Gitlab CI
+      - Github Actions
+  - family: Infrastructure-as-Code
+    items:
+      - Terraform
+      - Puppet
+      - Ansible
+  - family: Container Orchestration
+    items:
+      - Kubernetes
+      - Docker Swarm
+      - OpenShift
+  - family: Serverless
+    items:
+      - Knative
+      - OpenFaas
+      - Openshift
+  - family: Monitoring
+    items:
+      - Prometheus
+      - Grafana
+      - Splunk

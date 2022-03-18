@@ -1,4 +1,4 @@
-{{ $data := or (index .Site.Data .Site.Language.Lang).content .Site.Data.content }}
+{{ $data := or (index .Site.Data .Site.Language.Lang) .Site.Data }}
 {{ .Scratch.Set "data" $data }}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,15 +6,15 @@
 <body>
     <div class="content">
         <div class="content__left">
-            <h1 class="mainHeading">{{ $data.basicInfo.firstName }} <span>{{ $data.basicInfo.lastName }}</span></h1>
-            {{ partial "_overview.html" $data }}
+            <h1 class="mainHeading">{{ $data.profile.basicInfo.firstName }} <span>{{ $data.profile.basicInfo.lastName }}</span></h1>
+            {{ partial "_overview.html" $data.content }}
             {{ partial "_experience.html" $data }}
         </div>
         <div class="content__right">
-            {{ partial "_avatar.html" $data }}
-            {{ partial "_contacts.html" $data }}
-            {{ partial "_competencies.html" $data }}
-            {{ partial "_skills.html" $data }}
+            {{ partial "_avatar.html" $data.profile }}
+            {{ partial "_contacts.html" $data.profile }}
+            {{ partial "_competencies.html" $data.profile }}
+            {{ partial "_skills.html" $data.profile }}
             {{ partial "_certs.html" $data }}
         </div>
     </div>

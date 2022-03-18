@@ -5,10 +5,10 @@
     </div>
     <div class="sideSection__content">
         <ul>
-            {{ range sort .certs "vendor" "desc" }}
+            {{ range sort .certs "earnedDate" "desc" }}
             <li>
                 <a href="{{ .validationURL  | safeHTML }}", class="certification__title", target="_blank">{{ .title | safeHTML }}({{ .alias }})</a>
-                <span class="certification__date">{{ .earnedDate | safeHTML }}</span>
+                <span class="certification__date">{{ time.Format "January 2006" .earnedDate | safeHTML }}</span>
             </li>
             {{ end }}
         </ul>
