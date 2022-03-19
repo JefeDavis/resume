@@ -7,7 +7,7 @@
     <div class="content">
         <div class="content__left">
             <h1 class="mainHeading">{{ $data.profile.basicInfo.firstName }} <span>{{ $data.profile.basicInfo.lastName }}</span></h1>
-            {{ partial "_overview.html" $data.content }}
+            {{ partial "_overview.html" $data.profile }}
             {{ partial "_experience.html" $data }}
         </div>
         <div class="content__right">
