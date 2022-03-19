@@ -1,12 +1,12 @@
-apiVersion: resume.jefedavis.go/v1alpha1
+apiVersion: resume.jefedavis.dev/v1alpha1
 kind: Resume
 metadata:
   name: jeff-davis
   labels:
-    resume.jefedavis.go/candidate: jeffdavis
+    resume.jefedavis.dev/candidate: jeffdavis
   annotations:
-    resume.jefedavis.go/security-clearance: true
-    resume.jefedavis.go/security-clearance-level: ts/sci
+    resume.jefedavis.dev/security-clearance: true
+    resume.jefedavis.dev/security-clearance-level: ts/sci
 spec:
   name: Jeff Davis
   email: mr.JefeDavis@gmail.com

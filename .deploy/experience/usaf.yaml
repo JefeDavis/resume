@@ -1,11 +1,11 @@
 ---
-apiVersion: resume.jefedavis.go/v1alpha1
+apiVersion: resume.jefedavis.dev/v1alpha1
 kind: JobExperience
 metadata:
   name: usaf-jobs
   labels:
-    resume.jefedavis.go/candidate: jeffdavis
-    resume.jefedavis.go/employer: usaf
+    resume.jefedavis.dev/candidate: jeffdavis
+    resume.jefedavis.dev/employer: usaf
 spec:
   employer: United States Air Force
   postions:

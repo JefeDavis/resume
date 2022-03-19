@@ -1,11 +1,11 @@
 ---
-apiVersion: resume.jefedavis.go/v1alpha1
+apiVersion: resume.jefedavis.dev/v1alpha1
 kind: JobExperience
 metadata:
   name: vmware-jobs
   labels:
-    resume.jefedavis.go/candidate: jeffdavis
-    resume.jefedavis.go/employer: vmwareTanzuLabs
+    resume.jefedavis.dev/candidate: jeffdavis
+    resume.jefedavis.dev/employer: vmwareTanzuLabs
 spec:
   employer: VMware Tanzu Labs
   postions:

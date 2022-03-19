@@ -1,11 +1,11 @@
 ---
-apiVersion: resume.jefedavis.go/v1alpha1
+apiVersion: resume.jefedavis.dev/v1alpha1
 kind: JobExperience
 metadata:
   name: epic-jobs
   labels:
-    resume.jefedavis.go/candidate: jeffdavis
-    resume.jefedavis.go/employer: epicSystems
+    resume.jefedavis.dev/candidate: jeffdavis
+    resume.jefedavis.dev/employer: epicSystems
 spec:
   employer: Epic Systems
   positions:
