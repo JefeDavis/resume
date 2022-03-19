@@ -3,15 +3,15 @@ basicInfo:
   lastName: Davis
   photo: img/avatar.jpg
   contacts:
-    - icon: fa-solid fa-phone
+    - icon: fa fa-phone
       info: +1 (605) 269-8437
-    - icon: fa-solid fa-envelope
+    - icon: fa fa-envelope
       info: mr.JefeDavis@gmail.com
-    - icon: fa-brands fa-linkedin
+    - icon: fa fa-linkedin
       info: https://linkedin.com/in/JefeDavis
-    - icon: fa-brands fa-github
+    - icon: fa fa-github
       info: https://github.com/JefeDavis
-    - icon: fa-solid fa-map-marker-alt
+    - icon: fa fa-map-marker
       info: South Carolina
 overview:
   Passionate Kubernetes Engineer with automation, design, and architecture
