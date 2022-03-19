@@ -14,6 +14,6 @@ data:
     endDate: Present
     positions:
       - title: Title
-        startDate: StartDate
-        endDate: EndDate
+        startDate: 2006-01-03
+        endDate: 2006-01-04
         highlights: Highlights

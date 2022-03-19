@@ -3,28 +3,28 @@ commonOverlays:
   - name: customize label
     query: ..[?(@["resume.jefedavis.dev/candidate"] == "johndoe")]
     value:
-      #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
-      #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+      #+operator-builder:collection:field:name="profile.firstName",type=string,default="John",replace="john"
+      #+operator-builder:collection:field:name="profile.lastName",type=string,default="Doe",replace="doe"
       resume.jefedavis.dev/candidate: "johndoe" 
 yamlFiles:
   - name: Add Markers to Profile
-    path: ./configmap-profile.yaml
+    path: ./resume/configmap-profile.yaml
     overlays:
       - query: data
         value:
-          #+operator-builder:field:name=firstName,type=string,default=John,replace=FirstName
-          #+operator-builder:field:name=lastName,type=string,default=Doe,replace=LastName
-          #+operator-builder:field:name=phoneNumber,type=string,default="",replace=PhoneNumber
-          #+operator-builder:field:name=email,type=string,default="",replace=Email
-          #+operator-builder:field:name=linkedinURL,type=string,default="",replace=LinkedInURL
-          #+operator-builder:field:name=githubURL,type=string,default="",replace=GitHubURL
-          #+operator-builder:field:name=location,type=string,default="South Carolina",replace=Location
-          #+operator-builder:field:name=overview,type=string,default="",replace=Overview
-          #+operator-builder:field:name=coreCompentencies,type=string,default="",replace=CoreCompentencies
-          #+operator-builder:field:name=skills,type=string,default="",replace=Skills
+          #+operator-builder:field:name="profile.firstName",type=string,default=John,replace=FirstName
+          #+operator-builder:field:name="profile.lastName",type=string,default=Doe,replace=LastName
+          #+operator-builder:field:name="profile.phoneNumber",type=string,default="",replace=PhoneNumber
+          #+operator-builder:field:name="profile.email",type=string,default="",replace=Email
+          #+operator-builder:field:name="profile.linkedinURL",type=string,default="",replace=LinkedInURL
+          #+operator-builder:field:name="profile.githubURL",type=string,default="",replace=GitHubURL
+          #+operator-builder:field:name="profile.location",type=string,default="South Carolina",replace=Location
+          #+operator-builder:field:name="profile.overview",type=string,default="",replace=Overview
+          #+operator-builder:field:name="profile.coreCompentencies",type=string,default="",replace=CoreCompentencies
+          #+operator-builder:field:name="profile.skills",type=string,default="",replace=Skills
           "%k": "%v"
   - name: Add Markers to Certs
-    path: ./configmap-cert.yaml
+    path: ./resume/configmap-cert.yaml
     overlays:
       - query: data
         value:
@@ -35,21 +35,21 @@ yamlFiles:
           #+operator-builder:field:name=imageURL,type=string,default="",replace="ImageURL"
           "%k": "%v"
   - name: Add Markers to Experience
-    path: ./configmap-experience.yaml
+    path: ./resume/configmap-experience.yaml
     overlays:
       - query: data
         value:
           #+operator-builder:field:name=employer,type=string,replace=Employer
           #+operator-builder:field:name=location,type=string,replace=Location
-          #+operator-builder:field:name=startDate,type=string,replace=2006-01-02
+          #+operator-builder:field:name=startDate,type=string,replace="2006-01-02"
           #+operator-builder:field:name=endDate,type=string,replace=Present
           #+operator-builder:field:name="position.title",type=string,replace=Title
-          #+operator-builder:field:name="position.startDate",type=string,replace=StartDate
-          #+operator-builder:field:name="position.endDate",type=string,replace=EndDate
+          #+operator-builder:field:name="position.startDate",type=string,replace="2006-01-03"
+          #+operator-builder:field:name="position.endDate",type=string,replace="2006-01-04"
           #+operator-builder:field:name="position.highlights",type=string,replace=Highlights
           "%k": "%v"
   - name: Add Markers to Site Files
-    path: ./site/
+    path: ./resume/site/
     overlays:
       - name: Add Markers to Config
         query: data

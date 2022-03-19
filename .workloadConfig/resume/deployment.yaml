@@ -4,20 +4,20 @@ kind: Deployment
 metadata:
   name: resume
   labels:
-    #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
-    #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+    #+operator-builder:collection:field:name="profile.firstName",type=string,default="John",replace="john"
+    #+operator-builder:collection:field:name="profile.lastName",type=string,default="Doe",replace="doe"
     resume.jefedavis.dev/candidate: johndoe
 spec:
   selector:
     matchLabels:
-      #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
-      #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+      #+operator-builder:collection:field:name="profile.firstName",type=string,default="John",replace="john"
+      #+operator-builder:collection:field:name="profile.lastName",type=string,default="Doe",replace="doe"
       resume.jefedavis.dev/candidate: johndoe
   template:
     metadata:
       labels:
-        #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
-        #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+        #+operator-builder:collection:field:name="profile.firstName",type=string,default="John",replace="john"
+        #+operator-builder:collection:field:name="profile.lastName",type=string,default="Doe",replace="doe"
         resume.jefedavis.dev/candidate: johndoe
     spec:
       containers:
