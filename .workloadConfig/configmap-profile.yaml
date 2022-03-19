@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: resume-profile
+  labels:
+    #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
+    #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+    resume.jefedavis.dev/candidate: johndoe
+data:
+  #+operator-builder:field:name=firstName,type=string,default=John,replace=FirstName
+  #+operator-builder:field:name=lastName,type=string,default=Doe,replace=LastName
+  #+operator-builder:field:name=phoneNumber,type=string,default="",replace=PhoneNumber
+  #+operator-builder:field:name=email,type=string,default="",replace=Email
+  #+operator-builder:field:name=linkedinURL,type=string,default="",replace=LinkedInURL
+  #+operator-builder:field:name=githubURL,type=string,default="",replace=GitHubURL
+  #+operator-builder:field:name=location,type=string,default="South Carolina",replace=Location
+  #+operator-builder:field:name=overview,type=string,default="",replace=Overview
+  #+operator-builder:field:name=coreCompentencies,type=string,default="",replace=CoreCompentencies
+  #+operator-builder:field:name=skills,type=string,default="",replace=Skills
+  profile.yaml: |-
+    ---
+    basicInfo:
+      firstName: FirstName
+      lastName: LastName
+      photo: img/avatar.jpg
+      contacts:
+        - icon: fa-solid fa-phone
+          info: PhoneNumber
+        - icon: fa-solid fa-envelope
+          info: Email
+        - icon: fa-brands fa-linkedin
+          info: LinkedInURL
+        - icon: fa-brands fa-github
+          info: GitHubURL
+        - icon: fa-solid fa-map-marker-alt
+          info: Location
+    overview: Overview
+    coreCompetencies: CoreCompentencies
+    skills: Skills

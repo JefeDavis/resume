@@ -5,7 +5,7 @@ metadata:
   name: resume-service
 spec:
   selector:
-    resume.jefedavis.go/candidate: jeffdavis
+    resume.jefedavis.dev/candidate: johndoe
   ports:
   - port: 8080
     targetPort: 1313

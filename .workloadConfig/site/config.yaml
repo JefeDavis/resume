@@ -4,8 +4,13 @@ kind: ConfigMap
 metadata:
   name: resume-config
   labels:
-    resume.jefedavis.go/candidate: jeffdavis
+    #+operator-builder:collection:field:name="firstName",type=string,default="John",replace="john"
+    #+operator-builder:collection:field:name="lastName",type=string,default="Doe",replace="doe"
+    resume.jefedavis.dev/candidate: johndoe
 data:
+  #+operator-builder:field:name=baseURL,type=string,default="example.com",replace="example.com"
+  #+operator-builder:field:name=pageTitle,type=string,default="John Doe - CV",replace="John Doe - CV"
+  #+operator-builder:field:name=pageCount,type=string,default="1",replace="PageCount"
   config.toml: |-
     languageCode = "en-us"
     defaultContentLanguage = "en"
@@ -16,7 +21,7 @@ data:
     disableKinds = ["page", "section", "taxonomy", "term", "RSS", "sitemap"]
 
     baseURL = "https://example.com/"
-    title = "Jeff Davis - CV"
+    title = "John Doe - CV"
     #googleAnalytics = ""
 
     [params]
@@ -35,4 +40,4 @@ data:
     colorRightColumnBodyText = "#666"
     colorRightColumnIconPrimary = "#fff"
     colorRightColumnIconBackground = "#96B986"
-    pages = 2
+    pages = PageCount

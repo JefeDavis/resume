@@ -4,10 +4,10 @@ kind: Ingress
 metadata:
   name: resume
   labels:
-    name: resume
+    resume.jefedavis.dev/candidate: johndoe
 spec:
   rules:
-  - host: resume.jefedavis.dev
+  - host: example.com
     https:
       paths:
       - pathType: Prefix
