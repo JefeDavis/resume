@@ -32,7 +32,3 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 @import "components/skills";
 @import "components/certifications";
 @import "components/404";
-
-@import "icons/fontawesome";
-@import "icons/solid";
-@import "icons/brands";
