@@ -15,9 +15,6 @@ This respoistory and it's companion [Resume-Operator](https://github.com/JefeDav
 	- HTML5, SCSS
 	- Writing Great Documentation
 
-# Introduction
-This repository showcases
-
 # Why
 I hate updating resumes, It's not so much writing the content that I dislike. Instead, it's messing with Word and other tools to adjust margins, dealing with columns, page breaks and just formatting in gerneral. So, why not use a data structure language like `YAML` and let programming deal with all of the formating. Plus, the portability and rapod deployments are a big upshot as well.
 
