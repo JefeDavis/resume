@@ -7,6 +7,8 @@
     <div class="content">
         <div class="content__left">
             <h1 class="mainHeading">{{ $data.profile.basicInfo.firstName }} <span>{{ $data.profile.basicInfo.lastName }}</span></h1>
+            <h4 class="content__title"><span>This Resume is maintained using my Resume Operator powered by K8s</span></h4>
+            <h5>Check it out at: <a href="https://github.com/JefeDavis/resume">https://github.com/JefeDavis/Resume</a></h5>
             {{ partial "_overview.html" $data.profile }}
             {{ partial "_experience.html" $data }}
         </div>
