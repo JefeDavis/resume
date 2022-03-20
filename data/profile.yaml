@@ -59,13 +59,13 @@ skills:
   - family: Container Orchestration
     items:
       - Kubernetes
+      - Operators
       - Docker Swarm
       - OpenShift
   - family: Serverless
     items:
       - Knative
       - OpenFaas
-      - Openshift
   - family: Monitoring
     items:
       - Prometheus
