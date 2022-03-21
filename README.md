@@ -16,7 +16,7 @@ This respoistory and it's companion [Resume-Operator](https://github.com/JefeDav
 	- Writing Great Documentation
 
 # Why
-I hate updating resumes, It's not so much writing the content that I dislike. Instead, it's messing with Word and other tools to adjust margins, dealing with columns, page breaks and just formatting in gerneral. So, why not use a data structure language like `YAML` and let programming deal with all of the formating. Plus, the portability and rapod deployments are a big upshot as well.
+I hate updating resumes, It's not so much writing the content that I dislike. Instead, it's messing with Word and other tools to adjust margins, dealing with columns, page breaks and just formatting in general. So, why not use a data structure language like `YAML` and let programming deal with all of the formating. Plus, the portability and rapid deployments are a big upshot as well.
 
 Now I can store all my expierence, certifications, skills, and projects in kubernetes manifests and let the code handle the rest. I work with Kubernetes and Kuberentes Operators quite a bit, why not practice what I preach? 
 
