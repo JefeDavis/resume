@@ -5,7 +5,7 @@
         <li class="contact__item">
             <i class="{{ .icon }}"></i>
             {{- if in .info "http"}}
-                <a href="{{ .info }} | safeHTML }}" target="_blank">{{ .info | safeHTML }}</a>
+                <a href="{{ .info | safeHTML }}" target="_blank">{{ .info | safeHTML }}</a>
             {{- else }}
                 <span>{{ .info | safeHTML }}</span>
             {{- end }}
