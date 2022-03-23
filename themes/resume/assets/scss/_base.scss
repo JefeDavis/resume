@@ -12,6 +12,7 @@ html {
 	
 	@media print {
 		background-color: $color-light;
+		color-adjust: exact;
 	}
 }
 
