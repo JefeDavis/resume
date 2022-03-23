@@ -1,0 +1,49 @@
+{{- if .projects }}
+  <div id="projects" class="section">
+    <div class="section__heading">
+      <h2 class="section__title">
+        {{ i18n "projects" }}
+      </h2>
+    </div>
+		<div class="cards__container">
+			{{- $colors := getJSON "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json" }}
+			{{- $i := 0 }}
+			{{- $count := len .projects }}
+			{{- range .projects }}
+			 	{{- if modBool $i 3 }}
+				<div id="pinned-repos" class="cards__row">
+				{{- end }}
+					<div class="cards__col">
+						{{- $projectURL := replace . "github.com" "api.github.com/repos" }}
+						{{- $repo := $projectURL | getJSON }}
+						<a class="cards__link" href="{{ $repo.html_url }}" target="_blank">
+							<div class="cards__card">
+								<div class="cards__header">
+									<h5 class="cards__title">
+										<i class="fa fa-book-bookmark"></i> {{ $repo.name  | title }}
+									</h5>
+								</div>
+								<div class="cards__body">
+									<p class="cards__text">
+										{{ $repo.description | safeHTML | truncate 75 "..." }}
+									</p>
+									</div>
+									{{- if ne $repo.language nil }}
+									<div class="repos__language">
+										<span class="repos__languageicon" style="background-color: {{ (index $colors $repo.language).color | default nil }};"></span>
+										<span class="repos__language">{{ $repo.language }}</span>
+									</div>
+									{{- end }}
+							</div>
+						</a>
+					</div>
+				{{- $i = add $i 1 }}
+			 	{{- if modBool $i 3 }}
+				</div>
+				{{- else if eq $count $i }}
+				</div>
+				{{- end }}
+			{{- end }}
+		</div>
+	</div>
+{{- end }}

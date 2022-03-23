@@ -26,6 +26,8 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 @import "components/section";
 @import "components/side_section";
 @import "components/experience";
+@import "components/repos";
+@import "components/cards";
 @import "components/contact";
 @import "components/competencies";
 @import "components/avatar";
