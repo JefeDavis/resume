@@ -11,8 +11,9 @@ html {
 	background-color: $color-page-background;
 	
 	@media print {
-		background-color: $color-light;
 		color-adjust: exact;
+		print-color-adjust: exact;
+		-webkit-print-color-adjust: exact;
 	}
 }
 

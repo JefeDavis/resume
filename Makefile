@@ -1,5 +1,5 @@
 build:
-	docker build -t jefedavis/resume:latest .
+	docker build -t ${IMG} .
 
 push:
-	docker push jefedavis/resume:latest
+	docker push ${IMG}

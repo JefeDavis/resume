@@ -20,8 +20,8 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 @import "functions";
 @import "mixins";
 @import "layout";
-@import "base";
 @import "typography";
+@import "base";
 
 @import "components/section";
 @import "components/side_section";
