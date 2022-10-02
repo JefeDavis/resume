@@ -1,6 +1,6 @@
 # Resume - Jeff Davis - resume.jefedavis.dev
 
-This respoistory and it's companion [Resume-Operator](https://github.com/JefeDavis/Resume-Operator) serves two purposes:
+This respository and it's companion [Resume-Operator](https://github.com/JefeDavis/Resume-Operator) serves two purposes:
 
 * Backup of my resume for rapid deployment and development
 * Showcasing some skills while I'm at it:
