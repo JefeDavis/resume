@@ -22,16 +22,15 @@ RUN case "$(uname -m)" in \
 FROM cgr.dev/chainguard/hugo:latest-dev
 
 COPY --from=sass /tmp/dart-sass /opt/dart-sass
+# Confine every writable path Hugo needs to /tmp so the container can run with a
+# read-only root filesystem; the operator only needs to mount an emptyDir at /tmp.
 ENV PATH="/opt/dart-sass:${PATH}" \
-    HUGO_CACHEDIR="/tmp/hugo_cache"
-
-# Hugo (nonroot) must own the site dir to write its build lock and resource cache.
-USER root
-RUN mkdir -p /site && chown 65532:65532 /site
-USER 65532
+    HUGO_CACHEDIR="/tmp/hugo/cache" \
+    HUGO_RESOURCEDIR="/tmp/hugo/resources"
 
 # Site source owned by the nonroot user. data/ ships as a default and is
-# overridden by the operator's ConfigMap mount at runtime.
+# overridden by the operator's ConfigMap mount at runtime. Nothing is written
+# under /site at runtime (see --noBuildLock / --renderToMemory below).
 WORKDIR /site
 COPY --chown=65532:65532 assets/     /site/assets/
 COPY --chown=65532:65532 i18n/       /site/i18n/
@@ -44,5 +43,7 @@ EXPOSE 1313
 
 ENTRYPOINT ["hugo"]
 # --poll: ConfigMap volume updates land via symlink swaps that inotify misses,
-# so poll the filesystem to pick up operator content changes without a restart.
-CMD ["server", "--source", "/site", "--bind", "0.0.0.0", "--disableFastRender", "--poll", "2s"]
+#   so poll the filesystem to pick up operator content changes without a restart.
+# --noBuildLock / --renderToMemory: avoid writing a lock file and the public/ dir
+#   under /site, so the root filesystem can stay read-only.
+CMD ["server", "--source", "/site", "--bind", "0.0.0.0", "--disableFastRender", "--poll", "2s", "--noBuildLock", "--renderToMemory"]
