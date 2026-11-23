@@ -1,4 +1,4 @@
-languageCode = "en-us"
+locale = "en-us"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 enableEmoji = true
