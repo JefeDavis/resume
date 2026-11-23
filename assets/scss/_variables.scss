@@ -1,0 +1,19 @@
+// Color and layout variables. Defaults here are overridden by main.scss via
+// `@use "variables" with (...)`, which injects the Hugo-templated site params.
+$color-light: #ffffff !default;
+$color-dark: #666 !default;
+$color-page-background: #ddd !default;
+
+$color-primary: #e3bfb8 !default;
+$color-secondary: #aaa !default;
+
+$color-icon-primary: #fff !default;
+$color-icon-background: #e3bfb8 !default;
+
+$color-right-col-background: #f5f5f5 !default;
+$color-right-col-heading-text: #666 !default;
+$color-right-col-body-text: #666 !default;
+$color-right-col-icon-primary: #fff !default;
+$color-right-col-icon-background: #e3bfb8 !default;
+
+$pages: 1 !default;

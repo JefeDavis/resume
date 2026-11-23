@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
 .sideSection {
 	display: block;
 	margin-bottom: 3rem;

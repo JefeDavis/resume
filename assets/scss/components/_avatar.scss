@@ -1,3 +1,6 @@
+@use "../mixins" as *;
+@use "../abstract" as *;
+
 .avatar {
 	width: 100%;
 	height: $width-right-col - 6rem;

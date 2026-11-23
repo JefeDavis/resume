@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function paper_height($width) {
-	@return $width / 0.70695553;
+	@return math.div($width, 0.70695553);
 }
