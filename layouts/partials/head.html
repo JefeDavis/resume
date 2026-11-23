@@ -26,8 +26,9 @@
 		{{- end }}
 	{{- end }}
 
-	{{- if .Site.GoogleAnalytics }}
-		{{ template "_internal/google_analytics.html" . }}
-		{{ template "_internal/google_analytics_async.html" . }}
+	{{- with site.Config.Services.GoogleAnalytics.ID }}
+		{{- if hugo.IsProduction }}
+			{{ template "_internal/google_analytics.html" $ }}
+		{{- end }}
 	{{- end }}
 </head>

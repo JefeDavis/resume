@@ -6,7 +6,14 @@
       </h2>
     </div>
 		<div class="cards__container">
-			{{- $colors := getJSON "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json" }}
+			{{- $colors := dict }}
+			{{- with try (resources.GetRemote "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json") }}
+				{{- with .Err }}
+					{{- warnf "could not fetch github colors: %s" . }}
+				{{- else with .Value }}
+					{{- $colors = .Content | transform.Unmarshal }}
+				{{- end }}
+			{{- end }}
 			{{- $i := 0 }}
 			{{- $count := len .projects }}
 			{{- range .projects }}
@@ -15,7 +22,14 @@
 				{{- end }}
 					<div class="cards__col">
 						{{- $projectURL := replace . "github.com" "api.github.com/repos" }}
-						{{- $repo := $projectURL | getJSON }}
+						{{- $repo := dict }}
+						{{- with try (resources.GetRemote $projectURL) }}
+							{{- with .Err }}
+								{{- warnf "could not fetch repo %s: %s" $projectURL . }}
+							{{- else with .Value }}
+								{{- $repo = .Content | transform.Unmarshal }}
+							{{- end }}
+						{{- end }}
 						<a class="cards__link" href="{{ $repo.html_url }}" target="_blank">
 							<div class="cards__card">
 								<div class="cards__header">
