@@ -42,8 +42,8 @@ COPY --chown=65532:65532 config.toml /site/config.toml
 EXPOSE 1313
 
 ENTRYPOINT ["hugo"]
-# --poll: ConfigMap volume updates land via symlink swaps that inotify misses,
-#   so poll the filesystem to pick up operator content changes without a restart.
+# Data arrives via ConfigMap module mounts (see operator config.toml), which Hugo
+# resolves at startup; content changes roll the pod rather than live-reload.
 # --noBuildLock / --renderToMemory: avoid writing a lock file and the public/ dir
 #   under /site, so the root filesystem can stay read-only.
-CMD ["server", "--source", "/site", "--bind", "0.0.0.0", "--disableFastRender", "--poll", "2s", "--noBuildLock", "--renderToMemory"]
+CMD ["server", "--source", "/site", "--bind", "0.0.0.0", "--disableFastRender", "--noBuildLock", "--renderToMemory"]
